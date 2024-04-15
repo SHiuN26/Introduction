@@ -1,15 +1,13 @@
 import React from "react";
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
-const MyContent = () => {
+const AppContent = () => {
   const { Content } = Layout;
   return (
-    // <Layout>
-    //   <Content>
-    <Outlet />
-    //   </Content>
-    // </Layout>
+    <Content className="w-full p-4 overflow-auto">
+      <Outlet />
+    </Content>
   );
 };
 
-export default MyContent;
+export default AppContent;
