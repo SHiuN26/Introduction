@@ -1,23 +1,12 @@
 import React from "react";
-
+import { Row, Col } from "antd";
+import { fromJSON } from "postcss";
 const Home = () => {
   return (
     <div className="w-full h-full">
-      home long content
-      {
-        // indicates very long content
-        Array.from(
-          {
-            length: 100,
-          },
-          (_, index) => (
-            <p key={index}>
-              {index % 20 === 0 && index ? "more" : "..."}
-              <br />
-            </p>
-          )
-        )
-      }
+      <Row>
+        <Col></Col>
+      </Row>
     </div>
   );
 };

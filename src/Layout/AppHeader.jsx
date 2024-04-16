@@ -13,7 +13,7 @@ const AppHeader = () => {
         background: colorPrimary,
       }}
     >
-      這是網頁的頭
+      Lin's Introduce
     </Header>
   );
 };
