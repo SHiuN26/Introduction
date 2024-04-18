@@ -32,7 +32,7 @@ const AppNavbar = () => {
 
   return (
     <Sider
-      collapsible
+      collapsible={false}
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
       theme="light"
