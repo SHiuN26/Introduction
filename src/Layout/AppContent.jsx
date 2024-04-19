@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 const AppContent = () => {
   const { Content } = Layout;
   return (
-    <Content className="w-full p-4 overflow-auto bg-[#F0F0F0]">
+    <Content className="w-full p-4 bg-[#F0F0F0]">
       <Outlet />
     </Content>
   );

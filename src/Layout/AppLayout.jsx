@@ -7,7 +7,7 @@ const AppLayout = () => {
   return (
     <Layout>
       <AppHeader />
-      <Layout className="h-[90vh] flex-row">
+      <Layout className="overflow-auto flex-row">
         <AppNavbar />
         <AppContent />
       </Layout>

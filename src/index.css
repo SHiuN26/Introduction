@@ -1,4 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+  
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 默认字体 ，取代原本的英數字體*/
+/* * {
+    font-family: 'Alfa Slab One','Noto Sans TC', sans-serif; 
+  } */

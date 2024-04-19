@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Alfa: ["Alfa Slab One", "serif"],
+        Noto: ["Noto Sans TC", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
