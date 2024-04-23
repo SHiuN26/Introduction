@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Alfa: ["Alfa Slab One", "serif"],
-        Noto: ["Noto Sans TC", "sans-serif"],
+        // Alfa: ["Alfa Slab One", "serif"],
+        Noto: ["Noto Sans TC"],
+        Alfa: ["Alfa Slab One"],
       },
     },
   },

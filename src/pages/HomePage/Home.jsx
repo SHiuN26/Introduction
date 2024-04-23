@@ -20,7 +20,6 @@ const Home = () => {
           <div>
             前端工作經驗約2年，曾於工智聯科技擔任前端工程師，負責前端網站維護及功能開發，使用React開發及維護ERP系統、生產戰情系統，使用使用jQuery開發公司形象網站，有API串接經驗
           </div>
-          {/* 工作內容為ERP功能、報表維護開發，生產戰情系統功能維護開發，與設計師配圖稿 */}
         </Col>
       </Row>
       <Row>
@@ -65,10 +64,6 @@ const Home = () => {
             <div>React Testing Library</div>
             <div>Vite、Vitest</div>
             <div>I18n</div>
-            {/* <div>React Quill套件</div> */}
-            {/* <div>React to pdf 套件</div> */}
-            {/* <div>ExcelJS套件 導出excel</div> */}
-            {/* <div>Highcharts 圖表套件</div> */}
           </div>
         </Col>
         <Col
@@ -82,8 +77,6 @@ const Home = () => {
           <div className="flex flex-col justify-start items-start pl-4">
             <div>Antd UI</div>
             <div>Tailwind CSS</div>
-            {/* <div>html、css、jQuery 製作 RWD 形象官網</div> */}
-            {/* <div>Figma 進行UI切版</div> */}
           </div>
         </Col>
         <Col

@@ -1,26 +1,77 @@
 import React from "react";
-import { Timeline } from "antd";
+import { Timeline, Space } from "antd";
 const WorkTimeLine = () => {
   const workItems = [
     {
       children: (
-        <div className="font-Alfa text-lg">
-          <div>2022-04-11~2024-02-20</div>
-          <div className="font-Noto">
-            React 前端工程師-工智聯科技股份有限公司
+        <div className="font-Alfa text-xl">
+          <div className="mb-2 font-bold">React 前端工程師</div>
+          <div className="font-Noto mb-2">
+            工智聯科技股份有限公司｜2022.04 ~ 2024.02
           </div>
-          {/* <div>工智聯科技股份有限公司</div> */}
-          <div>Technical testing 2</div>
+          <Space
+            direction="vertical"
+            size="large"
+            style={{
+              display: "flex",
+            }}
+          >
+            <div className="font-Noto pl-2">
+              <div className="font-semibold">ERP 專案</div>
+              <ul className="text-base list-disc pl-6">
+                <li>ERP 表單功能開發、維護</li>
+                <li>ERP 報表使用 ExcelJS 套件導出 Excel 報表</li>
+                <li>使用 React-To-Print 將 ERP 表單匯出 PDF 檔案</li>
+                <li>使用 React-To-Print 搭配點陣式印表機列印表單</li>
+                <li>使用 I18N 套件進行多語言翻譯</li>
+              </ul>
+            </div>
+
+            <div className="font-Noto pl-2">
+              <div className="font-semibold">生產戰情專案</div>
+              <ul className="text-base list-disc pl-6">
+                <li>生產戰情系統功能維護開發</li>
+                <li>根據設計師要求進行 UI 切版</li>
+                <li>使用 Highcharts 圖表套件串接WebSocket</li>
+                <li>使用 I18N 套件進行多語言翻譯</li>
+              </ul>
+            </div>
+
+            <div className="font-Noto pl-2">
+              <div className="font-semibold">公司形象網站</div>
+              <ul className="text-base list-disc pl-6">
+                <li>html、css、jQuery 製作 RWD 網頁</li>
+              </ul>
+            </div>
+          </Space>
         </div>
       ),
     },
     {
       children: (
-        <div className=" text-lg">
-          <div>2015-09-01</div>
-          <div className="font-Alfa">Technical testing 1</div>
-          <div>Technical testing 2</div>
-          <div>Technical testing 3 2015-09-01</div>
+        <div className="font-Alfa text-xl">
+          <div className="mb-2 font-bold">資訊人員</div>
+          <div className="font-Noto mb-2">
+            長信環保科技股份有限公司｜2018.05 ~ 2021.02
+          </div>
+          <Space
+            direction="vertical"
+            size="large"
+            style={{
+              display: "flex",
+            }}
+          >
+            <div className="font-Noto pl-2">
+              <div className="font-semibold">ERP 系統導入</div>
+              <ul className="text-base list-disc pl-6">
+                <li>協調各部門配合ERP系統調整流程</li>
+                <li>生管部門單據錯誤率由20% 降至 5%</li>
+                <li>業務部門單據錯誤率由20% 降至 5% </li>
+                <li>ERP 整合車牌辨識系統導入，節省 30% 人員單據輸入作業時間</li>
+                <li>財會部門報表財務結構更清晰</li>
+              </ul>
+            </div>
+          </Space>
         </div>
       ),
     },
