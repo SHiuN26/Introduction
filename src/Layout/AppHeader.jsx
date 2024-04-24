@@ -13,7 +13,7 @@ const AppHeader = () => {
         background: colorPrimary,
       }}
     >
-      Lin's Introduce
+      Louis Lin's Introduce
     </Header>
   );
 };

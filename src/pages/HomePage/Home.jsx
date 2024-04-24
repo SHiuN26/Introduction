@@ -1,26 +1,59 @@
 import React from "react";
-import { Row, Col, Divider } from "antd";
+import { Row, Col, Divider, Avatar, Typography } from "antd";
 import dog from "@/asset/img/dog.jpg";
 import WorkTimeLine from "./WorkTimeLine";
+import GithubIcon from "@/Components/GithubIcon";
 const Home = () => {
+  const { Title, Paragraph, Text, Link } = Typography;
   return (
     <div className="w-full h-full border font-Alfa">
-      <Row className="h-[30vh]" align="middle" justify="center">
-        <Col
-          span={6}
-          className="h-full flex justify-center items-center w-[20vw]"
-        >
-          <img src={dog} className="rounded-full object-cover max-h-[25vh]" />
+      <Row align="middle" justify="center">
+        {/* <Space
+          direction="vertical"
+          size="middle"
+          style={{
+            display: "flex",
+          }}
+        > */}
+        <Col span={24} className="flex justify-center items-center">
+          <Avatar
+            size={{
+              xs: 48,
+              sm: 64,
+              md: 80,
+              lg: 128,
+              xl: 160,
+              xxl: 200,
+            }}
+            src={dog}
+          />
         </Col>
         <Col
-          span={18}
-          className="h-full flex flex-col justify-start items-start w-[80vw] p-4"
+          span={24}
+          className="flex flex-col justify-center items-center p-4"
         >
-          <div className="inline text-4xl font-semibold ">狗蛋大兵 Golden</div>
-          <div>
-            前端工作經驗約2年，曾於工智聯科技擔任前端工程師，負責前端網站維護及功能開發，使用React開發及維護ERP系統、生產戰情系統，使用使用jQuery開發公司形象網站，有API串接經驗
+          <div className="text-2xl">
+            <Title>
+              <span className="font-semibold">狗蛋大兵</span> Golden
+            </Title>
+          </div>
+          <div className="w-[60vw]">
+            <Paragraph className="text-base">
+              在工智聯科技擔任前端工程師期間，我負責ERP和生產戰情系統的前端開發與維護，
+              使用React技術實現了功能如Excel報表自動導出和ERP表單的PDF轉換。此外，
+              我運用React-To-Print技術實現文檔列印，
+              並通過I18N套件提供多語言支持。我也使用jQuery開發了公司的形象網站，
+              確保了響應式和用戶友好的界面。
+              在生產戰情系統的UI設計方面，我負責精準的切版，
+              並利用Highcharts和WebSocket技術提升數據的視覺效果和即時性。
+              我的技術能力包括製作兼容多種裝置的響應式網頁，保證了良好的用戶體驗。
+            </Paragraph>
           </div>
         </Col>
+        <Col span={24} className="flex justify-center items-center">
+          <GithubIcon />
+        </Col>
+        {/* </Space> */}
       </Row>
       <Row>
         <Col span={24} className="w-full">

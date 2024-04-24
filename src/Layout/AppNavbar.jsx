@@ -30,13 +30,15 @@ const AppNavbar = () => {
     },
   ];
 
+  const todo = ["RWD", "PDF", "I18N", "MockTesting"];
+
   return (
     <Sider
       collapsible={false}
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
       theme="light"
-      width={"18vw"}
+      width={"20vw"}
     >
       <Menu
         theme="light"
@@ -48,6 +50,9 @@ const AppNavbar = () => {
           setCurrentRoute(e.key);
         }}
       />
+      {todo.map((item) => {
+        return <div key={item}>{item}</div>;
+      })}
     </Sider>
   );
 };

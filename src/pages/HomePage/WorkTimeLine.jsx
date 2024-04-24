@@ -5,7 +5,7 @@ const WorkTimeLine = () => {
     {
       children: (
         <div className="font-Alfa text-xl">
-          <div className="mb-2 font-bold">React 前端工程師</div>
+          <div className="mb-2 font-bold underline">React 前端工程師</div>
           <div className="font-Noto mb-2">
             工智聯科技股份有限公司｜2022.04 ~ 2024.02
           </div>
@@ -50,7 +50,7 @@ const WorkTimeLine = () => {
     {
       children: (
         <div className="font-Alfa text-xl">
-          <div className="mb-2 font-bold">資訊人員</div>
+          <div className="mb-2 font-extrabold underline">資訊人員</div>
           <div className="font-Noto mb-2">
             長信環保科技股份有限公司｜2018.05 ~ 2021.02
           </div>
@@ -68,7 +68,7 @@ const WorkTimeLine = () => {
                 <li>生管部門單據錯誤率由20% 降至 5%</li>
                 <li>業務部門單據錯誤率由20% 降至 5% </li>
                 <li>ERP 整合車牌辨識系統導入，節省 30% 人員單據輸入作業時間</li>
-                <li>財會部門報表財務結構更清晰</li>
+                <li>財會部配門合ERP數據製作可視化圖表、成本結構更清晰</li>
               </ul>
             </div>
           </Space>
