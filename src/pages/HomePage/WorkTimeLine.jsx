@@ -65,8 +65,8 @@ const WorkTimeLine = () => {
               <div className="font-semibold">ERP 系統導入</div>
               <ul className="text-base list-disc pl-6">
                 <li>協調各部門配合ERP系統調整流程</li>
-                <li>生管部門單據錯誤率由20% 降至 5%</li>
-                <li>業務部門單據錯誤率由20% 降至 5% </li>
+                <li>生管部門單據正確率提升至100%</li>
+                <li>業務部門單據正確率提升至100% </li>
                 <li>ERP 整合車牌辨識系統導入，節省 30% 人員單據輸入作業時間</li>
                 <li>財會部配門合ERP數據製作可視化圖表、成本結構更清晰</li>
               </ul>

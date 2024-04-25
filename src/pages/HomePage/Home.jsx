@@ -4,17 +4,10 @@ import dog from "@/asset/img/dog.jpg";
 import WorkTimeLine from "./WorkTimeLine";
 import GithubIcon from "@/Components/GithubIcon";
 const Home = () => {
-  const { Title, Paragraph, Text, Link } = Typography;
+  const { Title, Paragraph } = Typography;
   return (
     <div className="w-full h-full border font-Alfa">
       <Row align="middle" justify="center">
-        {/* <Space
-          direction="vertical"
-          size="middle"
-          style={{
-            display: "flex",
-          }}
-        > */}
         <Col span={24} className="flex justify-center items-center">
           <Avatar
             size={{
@@ -53,7 +46,6 @@ const Home = () => {
         <Col span={24} className="flex justify-center items-center">
           <GithubIcon />
         </Col>
-        {/* </Space> */}
       </Row>
       <Row>
         <Col span={24} className="w-full">
