@@ -1,6 +1,6 @@
 import React from "react";
 import { ConfigProvider } from "antd";
-import MyRoute from "@/Route/MyRoute";
+import MyRoute from "@/routes/MyRoute";
 
 const App = () => {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Divider, Avatar, Typography } from "antd";
 import dog from "@/asset/img/dog.jpg";
 import WorkTimeLine from "./WorkTimeLine";
-import GithubIcon from "@/Components/GithubIcon";
+import GithubIcon from "@/components/GithubIcon";
 const Home = () => {
   const { Title, Paragraph } = Typography;
   return (

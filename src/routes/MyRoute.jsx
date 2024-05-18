@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AppLayout from "@/Layout/AppLayout";
+import AppLayout from "@/layout/AppLayout";
 import Home from "@/pages/HomePage/Home";
 import Self from "@/pages/SelfPage/Self";
 const MyRoute = () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import { Layout } from "antd";
-import AppNavbar from "@/Layout/AppNavbar";
-import AppHeader from "@/Layout/AppHeader";
-import AppContent from "./AppContent";
+import AppNavbar from "@/layout/AppNavbar";
+import AppHeader from "@/layout/AppHeader";
+import AppContent from "@/layout/AppContent";
 const AppLayout = () => {
   return (
     // <Layout>

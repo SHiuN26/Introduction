@@ -19,15 +19,15 @@ const AppNavbar = () => {
         </>
       ),
     },
-    {
-      key: "/self",
-      icon: <CalendarOutlined />,
-      label: (
-        <>
-          <NavLink to={`/self`}>self</NavLink>
-        </>
-      ),
-    },
+    // {
+    //   key: "/self",
+    //   icon: <CalendarOutlined />,
+    //   label: (
+    //     <>
+    //       <NavLink to={`/self`}>self</NavLink>
+    //     </>
+    //   ),
+    // },
   ];
 
   const todo = ["RWD", "PDF", "I18N", "MockTesting"];
