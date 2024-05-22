@@ -1,7 +1,20 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 
-const GlobalContext = () => {
-  return <div>GlobalContext</div>;
+export const GlobalContext = createContext({
+  deviceType: "Desktop",
+});
+
+export const GlobalProvider = ({ children }) => {
+  const [deviceType, setDeviceType] = useState("Desktop");
+
+  return (
+    <GlobalContext.Provider
+      value={{
+        deviceType,
+        setDeviceType,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
 };
-
-export default GlobalContext;

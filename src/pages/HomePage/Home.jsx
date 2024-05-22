@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Row, Col, Divider, Avatar, Typography } from "antd";
 import dog from "@/asset/img/dog.jpg";
 import WorkTimeLine from "./WorkTimeLine";
 import GithubIcon from "@/components/GithubIcon";
+import { GlobalContext } from "@/contexts/GlobalContext";
+
 const Home = () => {
   const { Title, Paragraph } = Typography;
+  const { deviceType } = useContext(GlobalContext);
   return (
     <div className="w-full h-full border font-Alfa">
       <Row align="middle" justify="center">
@@ -75,7 +78,8 @@ const Home = () => {
         }}
       >
         <Col
-          span={8}
+          // span={8}
+          span={deviceType === "Mobile" ? 24 : 8}
           className="h-full flex flex-col justify-start items-start text-base"
         >
           <Divider className="flex justify-center items-center" />
@@ -92,7 +96,8 @@ const Home = () => {
           </div>
         </Col>
         <Col
-          span={8}
+          // span={8}
+          span={deviceType === "Mobile" ? 24 : 8}
           className="h-full flex flex-col justify-start items-start text-base"
         >
           <Divider className="flex justify-center items-center" />
@@ -105,7 +110,8 @@ const Home = () => {
           </div>
         </Col>
         <Col
-          span={8}
+          // span={8}
+          span={deviceType === "Mobile" ? 24 : 8}
           className="h-full flex flex-col justify-start items-start text-base"
         >
           <Divider className="flex justify-center items-center" />
