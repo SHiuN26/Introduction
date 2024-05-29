@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Button } from "antd";
 import { useReactToPrint } from "react-to-print";
 import Home from "@/pages/HomePage/Home";
@@ -22,7 +22,7 @@ const PDF = () => {
     <div className="w-full h-full">
       <Button onClick={() => handlePrint()}>Click to Print PDF</Button>
       <div className="hidden-print p-5" ref={componentRef}>
-        <Home className="" />
+        <Home />
       </div>
     </div>
   );

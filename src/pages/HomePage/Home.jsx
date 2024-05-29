@@ -5,11 +5,11 @@ import WorkTimeLine from "./WorkTimeLine";
 import GithubIcon from "@/components/GithubIcon";
 import { GlobalContext } from "@/contexts/GlobalContext";
 
-const Home = forwardRef((props, ref) => {
+const Home = () => {
   const { Title, Paragraph } = Typography;
   const { deviceType } = useContext(GlobalContext);
   return (
-    <div ref={ref} className="w-full h-full border font-Alfa">
+    <div className="w-full h-full border font-Alfa">
       <Row align="middle" justify="center">
         <Col span={24} className="flex justify-center items-center">
           <Avatar
@@ -127,6 +127,6 @@ const Home = forwardRef((props, ref) => {
       </Row>
     </div>
   );
-});
+};
 
 export default Home;
