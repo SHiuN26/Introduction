@@ -1,6 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Layout, Menu, Button, Drawer } from "antd";
-import { HomeOutlined, MenuOutlined } from "@ant-design/icons";
+import {
+  HomeOutlined,
+  MenuOutlined,
+  CalendarOutlined,
+} from "@ant-design/icons";
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "@/contexts/GlobalContext";
@@ -30,18 +34,18 @@ const AppNavbar = () => {
         </>
       ),
     },
-    // {
-    //   key: "/self",
-    //   icon: <CalendarOutlined />,
-    //   label: (
-    //     <>
-    //       <NavLink to={`/self`}>self</NavLink>
-    //     </>
-    //   ),
-    // },
+    {
+      key: "/pdf",
+      icon: <CalendarOutlined />,
+      label: (
+        <>
+          <NavLink to={`/pdf`}>PDF</NavLink>
+        </>
+      ),
+    },
   ];
 
-  const todo = ["RWD", "PDF", "I18N", "MockTesting"];
+  const todo = ["PDF", "I18N", "MockTesting"];
 
   return deviceType !== "Mobile" ? (
     <Sider
@@ -71,6 +75,7 @@ const AppNavbar = () => {
       }}
     >
       <Menu
+        style={{ borderRight: "none" }}
         theme="light"
         mode="inline"
         items={navItems}
@@ -80,9 +85,9 @@ const AppNavbar = () => {
           setCurrentRoute(e.key);
         }}
       />
-      {todo.map((item) => {
+      {/* {todo.map((item) => {
         return <div key={item}>{item}</div>;
-      })}
+      })} */}
     </Sider>
   ) : (
     <>

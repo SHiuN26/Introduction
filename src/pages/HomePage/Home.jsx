@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, forwardRef } from "react";
 import { Row, Col, Divider, Avatar, Typography } from "antd";
 import dog from "@/asset/img/dog.jpg";
 import WorkTimeLine from "./WorkTimeLine";
 import GithubIcon from "@/components/GithubIcon";
 import { GlobalContext } from "@/contexts/GlobalContext";
 
-const Home = () => {
+const Home = forwardRef((props, ref) => {
   const { Title, Paragraph } = Typography;
   const { deviceType } = useContext(GlobalContext);
   return (
-    <div className="w-full h-full border font-Alfa">
+    <div ref={ref} className="w-full h-full border font-Alfa">
       <Row align="middle" justify="center">
         <Col span={24} className="flex justify-center items-center">
           <Avatar
@@ -127,6 +127,6 @@ const Home = () => {
       </Row>
     </div>
   );
-};
+});
 
 export default Home;

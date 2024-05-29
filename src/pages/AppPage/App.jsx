@@ -5,6 +5,7 @@ import { GlobalContext } from "@/contexts/GlobalContext";
 
 const App = () => {
   const { deviceType, setDeviceType } = useContext(GlobalContext);
+
   const handleResize = () => {
     if (window.innerWidth <= 768) {
       setDeviceType("Mobile");

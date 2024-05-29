@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import AppLayout from "@/layout/AppLayout";
 import Home from "@/pages/HomePage/Home";
-import Self from "@/pages/SelfPage/Self";
+import PDF from "@/pages/PDFPage/PDF";
+import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 const MyRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Home />} />
-        <Route path="/self" element={<Self />} />
+        <Route path="pdf" element={<PDF />} />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
