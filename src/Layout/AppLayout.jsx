@@ -7,16 +7,7 @@ import { GlobalContext } from "@/contexts/GlobalContext";
 const AppLayout = () => {
   const { deviceType } = useContext(GlobalContext);
   return (
-    // <Layout>
-    //   <AppHeader />
-    //   <Layout className="overflow-auto flex-row">
-    //     <AppNavbar />
-    //     <AppContent />
-    //   </Layout>
-    // </Layout>
-
     <Layout hasSider>
-      {/* {deviceType !== "Mobile" && <AppNavbar />} */}
       <AppNavbar />
       <Layout
         className={`${deviceType !== "Mobile" ? "ml-[20vw]" : "ml-[0vw]"}`}

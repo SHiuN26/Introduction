@@ -1,16 +1,11 @@
 import React, { useState, useContext } from "react";
-import { Layout, Menu, Button, Drawer } from "antd";
-import {
-  HomeOutlined,
-  MenuOutlined,
-  CalendarOutlined,
-} from "@ant-design/icons";
+import { Layout, Menu, Drawer } from "antd";
+import { HomeOutlined, CalendarOutlined } from "@ant-design/icons";
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "@/contexts/GlobalContext";
 const AppNavbar = () => {
   const { Sider } = Layout;
-  // const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const [currentRoute, setCurrentRoute] = useState(location.pathname);
   const { deviceType, visible, setVisible } = useContext(GlobalContext);
@@ -74,13 +69,6 @@ const AppNavbar = () => {
     </Sider>
   ) : (
     <>
-      {/* <Button
-        className="absolute top-[0] left-[0] h-[10vh] bg-[#e68a00] z-[2]"
-        type="primary"
-        onClick={showDrawer}
-      >
-        <MenuOutlined />
-      </Button> */}
       <Drawer placement="left" onClose={onClose} open={visible} width={"75vw"}>
         <Menu
           items={navItems}
