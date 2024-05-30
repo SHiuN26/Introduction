@@ -5,7 +5,7 @@ import WorkTimeLine from "./Components/WorkTimeLine";
 import GithubIcon from "@/components/GithubIcon";
 import { GlobalContext } from "@/contexts/GlobalContext";
 
-const Home = forwardRef((props, ref) => {
+const Resume = forwardRef((props, ref) => {
   const { Title, Paragraph } = Typography;
   const { deviceType } = useContext(GlobalContext);
   return (
@@ -14,12 +14,12 @@ const Home = forwardRef((props, ref) => {
         <Col span={24} className="flex justify-center items-center">
           <Avatar
             size={{
-              xs: 48,
-              sm: 64,
-              md: 80,
-              lg: 128,
-              xl: 160,
-              xxl: 200,
+              xs: 150,
+              sm: 150,
+              md: 125,
+              lg: 125,
+              xl: 150,
+              xxl: 175,
             }}
             src={dog}
           />
@@ -83,7 +83,7 @@ const Home = forwardRef((props, ref) => {
           className="h-full flex flex-col justify-start items-start text-base"
         >
           <Divider className="flex justify-center items-center" />
-          <div className="font-Alfa w-full h-[8vh] bg-[#f7b552] rounded-lg flex justify-center items-center text-2xl color-[white] font-semibold">
+          <div className="font-Alfa w-full h-[5vh] bg-[#f7b552] rounded-lg flex justify-center items-center text-2xl color-[white] font-semibold">
             Javascript
           </div>
           <div className="flex flex-col justify-start items-start pl-4">
@@ -101,7 +101,7 @@ const Home = forwardRef((props, ref) => {
           className="h-full flex flex-col justify-start items-start text-base"
         >
           <Divider className="flex justify-center items-center" />
-          <div className="font-Alfa w-full h-[8vh] bg-[#f7b552] rounded-lg flex justify-center items-center text-2xl color-[white] font-semibold">
+          <div className="font-Alfa w-full h-[5vh] bg-[#f7b552] rounded-lg flex justify-center items-center text-2xl color-[white] font-semibold">
             Layout
           </div>
           <div className="flex flex-col justify-start items-start pl-4">
@@ -115,7 +115,7 @@ const Home = forwardRef((props, ref) => {
           className="h-full flex flex-col justify-start items-start text-base"
         >
           <Divider className="flex justify-center items-center" />
-          <div className="font-Alfa w-full h-[8vh] bg-[#f7b552] rounded-lg flex justify-center items-center text-2xl color-[white] font-semibold">
+          <div className="font-Alfa w-full h-[5vh] bg-[#f7b552] rounded-lg flex justify-center items-center text-2xl color-[white] font-semibold">
             Git / GitHub
           </div>
           <div className="flex flex-col justify-start items-start pl-4">
@@ -129,4 +129,4 @@ const Home = forwardRef((props, ref) => {
   );
 });
 
-export default Home;
+export default Resume;

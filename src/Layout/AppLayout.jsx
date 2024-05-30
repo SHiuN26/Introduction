@@ -19,9 +19,7 @@ const AppLayout = () => {
       {/* {deviceType !== "Mobile" && <AppNavbar />} */}
       <AppNavbar />
       <Layout
-        className={`${
-          deviceType !== "Mobile" ? "ml-[20vw]" : "ml-[0vw]"
-        } bg-[red]`}
+        className={`${deviceType !== "Mobile" ? "ml-[20vw]" : "ml-[0vw]"}`}
       >
         <AppHeader />
         <AppContent />

@@ -13,12 +13,7 @@ const AppNavbar = () => {
   // const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const [currentRoute, setCurrentRoute] = useState(location.pathname);
-  const { deviceType } = useContext(GlobalContext);
-  const [visible, setVisible] = useState(false);
-
-  const showDrawer = () => {
-    setVisible(true);
-  };
+  const { deviceType, visible, setVisible } = useContext(GlobalContext);
 
   const onClose = () => {
     setVisible(false);
@@ -30,7 +25,7 @@ const AppNavbar = () => {
       icon: <HomeOutlined />,
       label: (
         <>
-          <NavLink to={`/`}>home</NavLink>
+          <NavLink to={`/`}>Resume</NavLink>
         </>
       ),
     },
@@ -49,18 +44,6 @@ const AppNavbar = () => {
 
   return deviceType !== "Mobile" ? (
     <Sider
-      // collapsible={false}
-      // collapsed={collapsed}
-      // onCollapse={(value) => setCollapsed(value)}
-
-      // trigger={
-      //   deviceType !== "Mobile" ? (
-      //     <Button type="primary" onClick={toggleCollapsed}>
-      //       <MenuOutlined />
-      //     </Button>
-      //   ) : null
-      // }
-
       theme="light"
       width={"20vw"}
       collapsedWidth="0"
@@ -91,13 +74,13 @@ const AppNavbar = () => {
     </Sider>
   ) : (
     <>
-      <Button
-        className="absolute top-[0] left-[0] h-[10vh] bg-[#e68a00]"
+      {/* <Button
+        className="absolute top-[0] left-[0] h-[10vh] bg-[#e68a00] z-[2]"
         type="primary"
         onClick={showDrawer}
       >
         <MenuOutlined />
-      </Button>
+      </Button> */}
       <Drawer placement="left" onClose={onClose} open={visible} width={"75vw"}>
         <Menu
           items={navItems}

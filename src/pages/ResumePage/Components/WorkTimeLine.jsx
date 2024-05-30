@@ -1,6 +1,6 @@
 import React from "react";
 import { Timeline, Space } from "antd";
-import "@/pages/HomePage/homeprint.css";
+import "@/pages/ResumePage/homeprint.css";
 const WorkTimeLine = () => {
   const workItems = [
     {

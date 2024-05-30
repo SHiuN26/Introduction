@@ -6,12 +6,14 @@ export const GlobalContext = createContext({
 
 export const GlobalProvider = ({ children }) => {
   const [deviceType, setDeviceType] = useState("Desktop");
-
+  const [visible, setVisible] = useState(false);
   return (
     <GlobalContext.Provider
       value={{
         deviceType,
         setDeviceType,
+        visible,
+        setVisible,
       }}
     >
       {children}
