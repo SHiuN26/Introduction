@@ -45,7 +45,7 @@ const AppNavbar = () => {
     },
   ];
 
-  const todo = ["PDF", "I18N", "MockTesting"];
+  const todo = ["I18N", "MockTesting"];
 
   return deviceType !== "Mobile" ? (
     <Sider

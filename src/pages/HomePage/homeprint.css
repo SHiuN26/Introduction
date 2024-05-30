@@ -1,0 +1,17 @@
+@media print {
+
+  html, body {
+    height: 100vh; /* Use 100% here to support printing more than a single page*/
+    margin: 0 !important;
+    padding: 5mm !important;
+  }
+  .page-break {
+    margin-top: 2rem;
+    display: block;
+    page-break-before: always;
+  }
+  .first-page{
+  border:none;
+}
+ 
+}

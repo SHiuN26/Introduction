@@ -1,5 +1,6 @@
 import React from "react";
 import { Timeline, Space } from "antd";
+import "@/pages/HomePage/homeprint.css";
 const WorkTimeLine = () => {
   const workItems = [
     {
@@ -49,7 +50,7 @@ const WorkTimeLine = () => {
     },
     {
       children: (
-        <div className="font-Alfa text-xl">
+        <div className="font-Alfa text-xl page-break">
           <div className="mb-2 font-extrabold underline">資訊人員</div>
           <div className="font-Noto mb-2">
             長信環保科技股份有限公司｜2018.05 ~ 2021.02
