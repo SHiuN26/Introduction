@@ -1,7 +1,7 @@
 import React, { useContext, forwardRef } from "react";
 import { Row, Col, Divider, Avatar, Typography } from "antd";
 import dog from "@/asset/img/dog.jpg";
-import WorkTimeLine from "./WorkTimeLine";
+import WorkTimeLine from "./Components/WorkTimeLine";
 import GithubIcon from "@/components/GithubIcon";
 import { GlobalContext } from "@/contexts/GlobalContext";
 
