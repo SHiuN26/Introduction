@@ -5,7 +5,7 @@ import Resume from "@/pages/ResumePage/Resume";
 import PDF from "@/pages/PDFPage/PDF";
 import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 import { useLocation } from "react-router-dom";
-// const routePrefix = process.env.REACT_APP_ROUTE_PREFIX || "";
+const routePrefix = process.env.REACT_APP_ROUTE_PREFIX || "";
 
 const MyRoute = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const MyRoute = () => {
     console.log("currentRoute", currentRoute);
   }, [currentRoute]);
   return (
-    <Routes>
+    <Routes basename={routePrefix}>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Resume />} />
         <Route path="pdf" element={<PDF />} />

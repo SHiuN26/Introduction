@@ -13,6 +13,9 @@ const AppNavbar = () => {
   const onClose = () => {
     setVisible(false);
   };
+  useEffect(() => {
+    console.log("currentRoute", currentRoute);
+  }, [currentRoute]);
 
   const navItems = [
     {

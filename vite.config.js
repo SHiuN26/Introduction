@@ -1,30 +1,37 @@
-import { defineConfig } from "vite";
+// import { defineConfig } from "vite"
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  // base: "./Introduction/",
-  // base: "/Introduction/",
-  // base: process.env.VITE_ROUTE_PREFIX || "/",
-  // define: {
-  //   "process.env": {
-  //     REACT_APP_ROUTE_PREFIX: JSON.stringify(
-  //       process.env.REACT_APP_ROUTE_PREFIX || ""
-  //     ),
-  //   },
-  // },
-  define: {
-    "process.env": {
-      VITE_ROUTE_PREFIX: JSON.stringify(process.env.VITE_ROUTE_PREFIX || ""),
-    },
-  },
-  base: process.env.VITE_ROUTE_PREFIX || "/",
+// // https://vitejs.dev/config/
+// export default defineConfig({
+//   // base: process.env.REACT_APP_ROUTE_PREFIX || "/Introduction/",
+//   base: process.env.REACT_APP_ROUTE_PREFIX || "/",
+//   plugins: [react()],
+//   resolve: {
+//     alias: {
+//       "@": path.resolve(__dirname, "src/"),
+//     },
+//   },
+// });
 
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src/"),
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => {
+  // 加载相应模式的环境变量
+  const env = loadEnv(mode, process.cwd(), "");
+
+  return {
+    plugins: [react()],
+    base: env.REACT_APP_ROUTE_PREFIX || "/",
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src/"),
+      },
     },
-  },
+    define: {
+      "process.env.REACT_APP_ROUTE_PREFIX": JSON.stringify(
+        env.REACT_APP_ROUTE_PREFIX || ""
+      ),
+    },
+  };
 });
