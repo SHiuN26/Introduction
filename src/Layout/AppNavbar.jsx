@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Layout, Menu, Drawer } from "antd";
 import { HomeOutlined, CalendarOutlined } from "@ant-design/icons";
 import { useLocation } from "react-router-dom";
@@ -36,8 +36,6 @@ const AppNavbar = () => {
   ];
 
   const todo = ["I18N", "MockTesting"];
-
-  console.log("currentRoute", currentRoute);
 
   return deviceType !== "Mobile" ? (
     <Sider
