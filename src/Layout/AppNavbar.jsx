@@ -37,6 +37,8 @@ const AppNavbar = () => {
 
   const todo = ["I18N", "MockTesting"];
 
+  console.log("currentRoute", currentRoute);
+
   return deviceType !== "Mobile" ? (
     <Sider
       theme="light"
