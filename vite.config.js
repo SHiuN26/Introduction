@@ -6,14 +6,21 @@ import path from "path";
 export default defineConfig({
   // base: "./Introduction/",
   // base: "/Introduction/",
-  base: process.env.VITE_ROUTE_PREFIX || "/",
+  // base: process.env.VITE_ROUTE_PREFIX || "/",
+  // define: {
+  //   "process.env": {
+  //     REACT_APP_ROUTE_PREFIX: JSON.stringify(
+  //       process.env.REACT_APP_ROUTE_PREFIX || ""
+  //     ),
+  //   },
+  // },
   define: {
     "process.env": {
-      REACT_APP_ROUTE_PREFIX: JSON.stringify(
-        process.env.REACT_APP_ROUTE_PREFIX || ""
-      ),
+      VITE_ROUTE_PREFIX: JSON.stringify(process.env.VITE_ROUTE_PREFIX || ""),
     },
   },
+  base: process.env.VITE_ROUTE_PREFIX || "/",
+
   plugins: [react()],
   resolve: {
     alias: {
