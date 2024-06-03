@@ -4,7 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/Introduction/",
+  // base: "./Introduction/",
+  base: "/SHiuN26.github.io/Introduction/",
   plugins: [react()],
   resolve: {
     alias: {
