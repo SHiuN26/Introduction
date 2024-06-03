@@ -6,6 +6,13 @@ import path from "path";
 export default defineConfig({
   // base: "./Introduction/",
   base: "/Introduction/",
+  define: {
+    "process.env": {
+      REACT_APP_ROUTE_PREFIX: JSON.stringify(
+        process.env.REACT_APP_ROUTE_PREFIX || ""
+      ),
+    },
+  },
   plugins: [react()],
   resolve: {
     alias: {
