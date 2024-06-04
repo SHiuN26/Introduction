@@ -5,11 +5,11 @@ import Resume from "@/pages/ResumePage/Resume";
 import PDF from "@/pages/PDFPage/PDF";
 import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 
-// const routePrefix = process.env.REACT_APP_ROUTE_PREFIX || "";
-// basename={routePrefix}
+const routePrefix = process.env.REACT_APP_ROUTE_PREFIX || "";
+
 const MyRoute = () => {
   return (
-    <Routes>
+    <Routes basename={routePrefix}>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Resume />} />
         <Route path="pdf" element={<PDF />} />

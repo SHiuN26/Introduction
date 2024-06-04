@@ -7,11 +7,11 @@ import { GlobalProvider } from "./contexts/GlobalContext";
 import "./index.css";
 import "antd/dist/reset.css";
 
-const routePrefix = process.env.REACT_APP_ROUTE_PREFIX || "";
-
+// const routePrefix = process.env.REACT_APP_ROUTE_PREFIX || "";
+// basename={routePrefix}
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename={routePrefix}>
+    <BrowserRouter>
       <GlobalProvider>
         <App />
       </GlobalProvider>
