@@ -1,6 +1,6 @@
 import React, { useContext, forwardRef } from "react";
 import { Row, Col, Divider, Avatar, Typography } from "antd";
-import dog from "@/asset/img/dog.jpg";
+import picture from "@/asset/img/picture.jpg";
 import WorkTimeLine from "./Components/WorkTimeLine";
 import GithubIcon from "@/components/GithubIcon";
 import { GlobalContext } from "@/contexts/GlobalContext";
@@ -21,7 +21,7 @@ const Resume = forwardRef((props, ref) => {
               xl: 150,
               xxl: 175,
             }}
-            src={dog}
+            src={picture}
           />
         </Col>
         <Col
@@ -30,7 +30,7 @@ const Resume = forwardRef((props, ref) => {
         >
           <div className="text-2xl">
             <Title>
-              <span className="font-semibold">狗蛋大兵</span> Golden
+              <span className="font-semibold font-Alfa">Louis Lin</span>
             </Title>
           </div>
           <div className="w-[60vw]">

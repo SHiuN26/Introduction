@@ -15,7 +15,7 @@ const AppHeader = () => {
 
   return (
     <Header
-      className="w-full h-[10vh] flex justify-center items-center text-white text-2xl"
+      className="w-full h-[10vh] flex justify-center items-center text-white text-2xl font-Alfa"
       style={{
         padding: 0,
         background: colorPrimary,
@@ -33,7 +33,7 @@ const AppHeader = () => {
           <MenuOutlined />
         </Button>
       )}
-      Louis Lin's Introduce
+      Resume
     </Header>
   );
 };
