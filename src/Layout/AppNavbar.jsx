@@ -27,15 +27,15 @@ const AppNavbar = () => {
         </>
       ),
     },
-    {
-      key: "/pdf",
-      icon: <CalendarOutlined />,
-      label: (
-        <>
-          <NavLink to={`/pdf`}>PDF</NavLink>
-        </>
-      ),
-    },
+    // {
+    //   key: "/pdf",
+    //   icon: <CalendarOutlined />,
+    //   label: (
+    //     <>
+    //       <NavLink to={`/pdf`}>PDF</NavLink>
+    //     </>
+    //   ),
+    // },
   ];
 
   const todo = ["I18N", "MockTesting"];

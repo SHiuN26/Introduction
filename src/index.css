@@ -7,7 +7,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: 'Alfa Slab One';
   src: url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
   font-display: 'block';
@@ -17,7 +17,7 @@
   font-family: 'Noto Sans TC';
   src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=block');
   font-display: 'block';
-}
+} */
 
 /* 默认字体 ，取代原本的英數字體*/
 /* * {

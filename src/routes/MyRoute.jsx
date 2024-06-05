@@ -12,7 +12,7 @@ const MyRoute = () => {
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Resume />} />
-        <Route path="pdf" element={<PDF />} />
+        {/* <Route path="pdf" element={<PDF />} /> */}
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
