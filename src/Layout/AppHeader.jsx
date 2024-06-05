@@ -23,6 +23,14 @@ const AppHeader = () => {
     content: () => componentRef.current,
   });
 
+  const handleOnBeforeGetContent = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 500); // 延迟500毫秒，确保iframe内容完全加载
+    });
+  };
+
   return (
     <Header
       className="rounded-md w-full h-[10vh] flex justify-center items-center text-white text-2xl font-Alfa "
@@ -44,7 +52,10 @@ const AppHeader = () => {
         gap="small"
       >
         <div style={{ display: "none" }}>
-          <Home ref={componentRef} />
+          <Home
+            ref={componentRef}
+            onBeforeGetContent={handleOnBeforeGetContent}
+          />
         </div>
         <Button
           className="flex justify-center items-center"
