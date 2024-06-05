@@ -47,11 +47,20 @@ const AppHeader = () => {
       <Flex
         className={`${
           deviceType !== "Mobile" && "px-[1rem]"
-        } pl-[10px] absolute top-[0] right-[0] h-[10vh] text-xl`}
-        justify="flex-end"
+        } pr-[10px] absolute top-[0] left-[0] h-[10vh] text-xl w-full`}
+        justify={deviceType === "Mobile" ? "space-between" : "flex-end"}
         align="center"
         gap="small"
       >
+        {deviceType === "Mobile" && (
+          <Button
+            className="flex justify-center items-center bg-[#e68a00] z-[2] h-[10vh]"
+            type="primary"
+            onClick={showDrawer}
+          >
+            <MenuOutlined />
+          </Button>
+        )}
         <div style={{ display: "none" }}>
           <Home ref={componentRef} />
         </div>
@@ -70,15 +79,6 @@ const AppHeader = () => {
           onBeforeGetContent={handleBeforePrint}
           onAfterPrint={handleAfterPrint}
         />
-        {deviceType === "Mobile" && (
-          <Button
-            className="flex justify-center items-center bg-[#e68a00] z-[2] h-[10vh]"
-            type="primary"
-            onClick={showDrawer}
-          >
-            <MenuOutlined />
-          </Button>
-        )}
       </Flex>
     </Header>
   );

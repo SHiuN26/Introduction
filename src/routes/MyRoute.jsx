@@ -5,8 +5,6 @@ import Resume from "@/pages/ResumePage/Resume";
 import PDF from "@/pages/PDFPage/PDF";
 import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 
-// const routePrefix = process.env.REACT_APP_ROUTE_PREFIX || "";
-// basename={routePrefix}
 const MyRoute = () => {
   return (
     <Routes>
