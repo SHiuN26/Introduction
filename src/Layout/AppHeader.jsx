@@ -1,9 +1,9 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import { Layout, theme, Button, Flex } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import { PrinterOutlined } from "@ant-design/icons";
-import { useReactToPrint } from "react-to-print";
+import ReactToPrint, { useReactToPrint } from "react-to-print";
 import Home from "@/pages/ResumePage/Resume";
 
 const AppHeader = () => {
@@ -13,6 +13,7 @@ const AppHeader = () => {
   } = theme.useToken();
   const { deviceType, setVisible } = useContext(GlobalContext);
 
+  const [isPrinting, setIsPrinting] = useState(false);
   const componentRef = useRef();
 
   const showDrawer = () => {
@@ -23,12 +24,12 @@ const AppHeader = () => {
     content: () => componentRef.current,
   });
 
-  const handleOnBeforeGetContent = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, 500); // 延迟500毫秒，确保iframe内容完全加载
-    });
+  const handleBeforePrint = () => {
+    setIsPrinting(true);
+  };
+
+  const handleAfterPrint = () => {
+    setIsPrinting(false);
   };
 
   return (
@@ -52,26 +53,24 @@ const AppHeader = () => {
         gap="small"
       >
         <div style={{ display: "none" }}>
-          <Home
-            ref={componentRef}
-            onBeforeGetContent={handleOnBeforeGetContent}
-          />
+          <Home ref={componentRef} />
         </div>
-        <Button
-          className="flex justify-center items-center"
-          onClick={() => handlePrint()}
-        >
-          {deviceType !== "Mobile" && "PDF"}
-          <PrinterOutlined className="" />
-        </Button>
+        <ReactToPrint
+          trigger={() => (
+            <Button
+              className="flex justify-center items-center"
+              onClick={() => handlePrint()}
+              disabled={isPrinting}
+            >
+              {deviceType !== "Mobile" && "PDF"}
+              <PrinterOutlined />
+            </Button>
+          )}
+          content={() => componentRef.current}
+          onBeforeGetContent={handleBeforePrint}
+          onAfterPrint={handleAfterPrint}
+        />
         {deviceType === "Mobile" && (
-          // <Button
-          //   className="absolute top-[0] right-[0] h-[10vh] bg-[#e68a00] z-[2]"
-          //   type="primary"
-          //   onClick={showDrawer}
-          // >
-          //   <MenuOutlined />
-          // </Button>
           <Button
             className="flex justify-center items-center bg-[#e68a00] z-[2] h-[10vh]"
             type="primary"
