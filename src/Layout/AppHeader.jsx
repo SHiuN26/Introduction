@@ -5,7 +5,7 @@ import { GlobalContext } from "@/contexts/GlobalContext";
 import { PrinterOutlined } from "@ant-design/icons";
 import ReactToPrint, { useReactToPrint } from "react-to-print";
 import Home from "@/pages/ResumePage/Resume";
-
+import { TranslateContext } from "@/contexts/TranslateContext";
 const AppHeader = () => {
   const { Header } = Layout;
   const {
@@ -15,6 +15,7 @@ const AppHeader = () => {
 
   const [isPrinting, setIsPrinting] = useState(false);
   const componentRef = useRef();
+  const { translate } = useContext(TranslateContext);
 
   const showDrawer = () => {
     setVisible(true);
@@ -43,7 +44,7 @@ const AppHeader = () => {
         zIndex: 1,
       }}
     >
-      Resume
+      {translate("navbar.resume")}
       <Flex
         className={`${
           deviceType !== "Mobile" && "px-[1rem]"

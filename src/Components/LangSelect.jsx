@@ -11,7 +11,7 @@ const LangSelect = () => {
 
   return (
     <div className="flex justify-center items-center w-full p-2">
-      {translate("golbal.lang")} :{/* {translate("lang")} : */}
+      {translate("global.lang")} :{/* {translate("lang")} : */}
       <Select
         onChange={(e) => handleLangChange(e)}
         className="px-2"

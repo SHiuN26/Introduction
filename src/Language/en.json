@@ -1,9 +1,12 @@
 
 {
-  "golbal":{
-    "lang": "Language"
-  },
+  "global":{
+    "lang": "Language",
+    "experience": "Work Experience",
+    "fe":"Frontend Engineer",
+    "it":"IT"
+    },
   "navbar": {
-    "resume":"resume"
+    "resume":"Resume"
   }
 }

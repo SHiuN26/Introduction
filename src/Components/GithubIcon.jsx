@@ -4,7 +4,7 @@ import githubIcon from "@/asset/icon/githubIcon.svg";
 const GithubIcon = () => {
   return (
     <a
-      href="https://github.com/SHiuN26"
+      href="https://shiun26.github.io/Introduction/"
       target="_blank"
       rel="noopener noreferrer"
     >

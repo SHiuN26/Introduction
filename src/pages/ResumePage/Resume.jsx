@@ -4,10 +4,13 @@ import picture from "@/asset/img/picture.jpg";
 import WorkTimeLine from "./Components/WorkTimeLine";
 import GithubIcon from "@/components/GithubIcon";
 import { GlobalContext } from "@/contexts/GlobalContext";
+import { TranslateContext } from "@/contexts/TranslateContext";
 
 const Resume = forwardRef((props, ref) => {
   const { Title, Paragraph } = Typography;
   const { deviceType } = useContext(GlobalContext);
+  const { lang, translate } = useContext(TranslateContext);
+
   return (
     <div ref={ref} className="w-full h-full border font-Alfa first-page">
       <Row align="middle" justify="center">
@@ -34,15 +37,37 @@ const Resume = forwardRef((props, ref) => {
             </Title>
           </div>
           <div className="w-[60vw]">
-            <Paragraph className="text-base">
-              在工智聯科技擔任前端工程師期間，我負責ERP和生產戰情系統的前端開發與維護，
-              使用React技術實現了功能如Excel報表自動導出和ERP表單的PDF轉換。此外，
-              我運用React-To-Print技術實現文檔列印，
-              並通過I18N套件提供多語言支持。我也使用jQuery開發了公司的形象網站，
-              確保了響應式和用戶友好的界面。
-              在生產戰情系統的UI設計方面，我負責精準的切版，
-              並利用Highcharts和WebSocket技術提升數據的視覺效果和即時性。
-              我的技術能力包括製作兼容多種裝置的響應式網頁，保證了良好的用戶體驗。
+            <Paragraph className="text-base text-justify">
+              {lang === "zh_TW" ? (
+                <>
+                  在工智聯科技擔任前端工程師期間，我負責ERP和生產戰情系統的前端開發與維護，
+                  使用React技術實現了功能如Excel報表自動導出和ERP表單的PDF轉換。此外，
+                  我運用React-To-Print技術實現文檔列印，
+                  並通過I18N套件提供多語言支持。我也使用jQuery開發了公司的形象網站，
+                  確保了響應式和用戶友好的界面。
+                  在生產戰情系統的UI設計方面，我負責精準的切版，
+                  並利用Highcharts和WebSocket技術提升數據的視覺效果和即時性。
+                  我的技術能力包括製作兼容多種裝置的響應式網頁，保證了良好的用戶體驗。
+                </>
+              ) : (
+                <>
+                  During my tenure as a front-end engineer at Smart Automation
+                  Technology, I was responsible for the front-end development
+                  and maintenance of the ERP and production battle systems. I
+                  utilized React technology to implement features such as
+                  automatic export of Excel reports and PDF conversion of ERP
+                  forms. Additionally, I used React-To-Print technology for
+                  document printing and provided multi-language support through
+                  the I18N package. I also developed the company's image website
+                  using jQuery, ensuring a responsive and user-friendly
+                  interface. In the UI design of the production battle system, I
+                  was responsible for precise slicing and used Highcharts and
+                  WebSocket technology to enhance the visual effect and
+                  real-time data capabilities. My technical skills include
+                  creating responsive web pages compatible with various devices,
+                  ensuring a good user experience.
+                </>
+              )}
             </Paragraph>
           </div>
         </Col>
@@ -53,8 +78,8 @@ const Resume = forwardRef((props, ref) => {
       <Row>
         <Col span={24} className="w-full">
           <Divider>
-            <div className="text-2xl font-semibold font-Alfa">
-              Work Experience
+            <div className="text-2xl font-Alfa font-black">
+              {translate("global.experience")}
             </div>
           </Divider>
         </Col>

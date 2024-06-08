@@ -14,11 +14,15 @@ const resources = {
   },
 };
 
+// 从localStorage获取用户的语言选择
+const savedLanguage = localStorage.getItem("language") || "zh_TW";
+
 i18n
   .use(initReactI18next) // 传递 i18n 实例给 react-i18next
   .init({
     resources,
-    lng: "zh_TW", // 默认语言
+    // lng: "zh_TW", // 默认语言
+    lng: savedLanguage, // 使用从localStorage中获取的语言
     interpolation: {
       escapeValue: false, // react 已经对 xss 进行保护
     },

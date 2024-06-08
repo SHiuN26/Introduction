@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Timeline, Space } from "antd";
-import "@/pages/ResumePage/homeprint.css";
+import { useContext } from "react";
+import { TranslateContext } from "@/contexts/TranslateContext";
+import "@/pages/ResumePage/ResumePrint.css";
+
 const WorkTimeLine = () => {
+  const { lang, translate } = useContext(TranslateContext);
+
   const workItems = [
     {
       children: (
         <div className="font-Alfa text-xl">
-          <div className="mb-2 font-bold underline">React 前端工程師</div>
+          <div className="mb-2 font-bold underline">
+            React {translate("global.fe")}
+          </div>
           <div className="font-Noto mb-2">
             工智聯科技股份有限公司｜2022.04 ~ 2024.02
           </div>
@@ -51,7 +58,9 @@ const WorkTimeLine = () => {
     {
       children: (
         <div className="font-Alfa text-xl page-break">
-          <div className="mb-2 font-extrabold underline">資訊人員</div>
+          <div className="mb-2 font-extrabold underline">
+            {translate("global.it")}
+          </div>
           <div className="font-Noto mb-2">
             長信環保科技股份有限公司｜2018.05 ~ 2021.02
           </div>
@@ -77,9 +86,117 @@ const WorkTimeLine = () => {
       ),
     },
   ];
+
+  const workItems＿en = [
+    {
+      children: (
+        <div className="font-Alfa text-xl">
+          <div className="mb-2 font-bold underline">
+            React {translate("global.fe")}
+          </div>
+          <div className="font-Noto mb-2">
+            Smart Automation Technology Co., Ltd. | 2022.04 ~ 2024.02
+          </div>
+          <Space
+            direction="vertical"
+            size="large"
+            style={{
+              display: "flex",
+            }}
+          >
+            <div className="font-Noto pl-2">
+              <div className="font-semibold">ERP Project</div>
+              <ul className="text-base list-disc pl-6">
+                <li>Development and maintenance of ERP form functions</li>
+                <li>Exporting Excel reports using the ExcelJS library</li>
+                <li>Exporting ERP forms to PDF files using React-To-Print</li>
+                <li>
+                  Printing forms using React-To-Print with dot matrix printers
+                </li>
+                <li>
+                  Implementing multilingual translation using the I18N library
+                </li>
+              </ul>
+            </div>
+
+            <div className="font-Noto pl-2">
+              <div className="font-semibold">Production Battle Project</div>
+              <ul className="text-base list-disc pl-6">
+                <li>
+                  Development and maintenance of production battle system
+                  functions
+                </li>
+                <li>UI slicing according to designer requirements</li>
+                <li>
+                  Integrating Highcharts with WebSocket for data visualization
+                </li>
+                <li>
+                  Implementing multilingual translation using the I18N library
+                </li>
+              </ul>
+            </div>
+
+            <div className="font-Noto pl-2">
+              <div className="font-semibold">Company Image Website</div>
+              <ul className="text-base list-disc pl-6">
+                <li>Creating RWD pages using HTML, CSS, and jQuery</li>
+              </ul>
+            </div>
+          </Space>
+        </div>
+      ),
+    },
+    {
+      children: (
+        <div className="font-Alfa text-xl page-break">
+          <div className="mb-2 font-extrabold underline">
+            {translate("global.it")}
+          </div>
+          <div className="font-Noto mb-2">
+            Changxin Environmental Technology Co., Ltd. | 2018.05 ~ 2021.02
+          </div>
+          <Space
+            direction="vertical"
+            size="large"
+            style={{
+              display: "flex",
+            }}
+          >
+            <div className="font-Noto pl-2">
+              <div className="font-semibold">ERP System Implementation</div>
+              <ul className="text-base list-disc pl-6">
+                <li>
+                  Coordinating departments to adjust processes for ERP system
+                </li>
+                <li>
+                  Increased accuracy of production department documents to 100%
+                </li>
+                <li>
+                  Increased accuracy of business department documents to 100%
+                </li>
+                <li>
+                  Integrated license plate recognition system with ERP, saving
+                  30% of personnel document input time
+                </li>
+                <li>
+                  Finance department visualized data using ERP, making cost
+                  structure clearer
+                </li>
+              </ul>
+            </div>
+          </Space>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <>
-      <Timeline className="w-full" items={workItems} mode={"left"} />
+      <Timeline
+        className="w-full"
+        items={lang === "zh_TW" ? workItems : workItems＿en}
+        mode={"left"}
+      />
     </>
   );
 };
