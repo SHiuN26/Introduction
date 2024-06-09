@@ -1,5 +1,5 @@
 import React, { useContext, forwardRef } from "react";
-import { Row, Col, Divider, Avatar, Typography } from "antd";
+import { Row, Col, Divider, Avatar, Typography, Flex } from "antd";
 import picture from "@/asset/img/picture.jpg";
 import WorkTimeLine from "./Components/WorkTimeLine";
 import GithubIcon from "@/components/GithubIcon";
@@ -51,7 +51,7 @@ const Resume = forwardRef((props, ref) => {
                 </>
               ) : (
                 <>
-                  During my tenure as a front-end engineer at Smart Automation
+                  {/* During my tenure as a front-end engineer at Smart Automation
                   Technology, I was responsible for the front-end development
                   and maintenance of the ERP and production battle systems. I
                   utilized React technology to implement features such as
@@ -65,14 +65,30 @@ const Resume = forwardRef((props, ref) => {
                   WebSocket technology to enhance the visual effect and
                   real-time data capabilities. My technical skills include
                   creating responsive web pages compatible with various devices,
-                  ensuring a good user experience.
+                  ensuring a good user experience. */}
+                  During my tenure as a front-end engineer at Smart Automation
+                  Technology, I developed and maintained ERP and production
+                  systems using React. I implemented features like Excel export,
+                  PDF conversion, and multi-language support with React-To-Print
+                  and I18N. I also built the company's responsive and
+                  user-friendly website using jQuery. In the production system
+                  UI, I performed precise slicing and utilized Highcharts and
+                  WebSocket for real-time data visualization. My skills include
+                  creating responsive web pages for various devices, ensuring a
+                  superior user experience.
                 </>
               )}
             </Paragraph>
           </div>
         </Col>
         <Col span={24} className="flex justify-center items-center">
-          <GithubIcon />
+          <Flex className="" justify="space-around" gap="small" align="center">
+            {/* <div></div> */}
+            <GithubIcon />
+            <a className="" href="mailto:justodme26@gmail.com" target="blank">
+              justodme26@gmail.com
+            </a>
+          </Flex>
         </Col>
       </Row>
       <Row>
@@ -143,11 +159,19 @@ const Resume = forwardRef((props, ref) => {
           <div className="font-Alfa w-full h-[5vh] bg-[#f7b552] rounded-lg flex justify-center items-center text-2xl color-[white] font-semibold">
             Git / GitHub
           </div>
-          <div className="flex flex-col justify-start items-start pl-4">
-            <div>熟悉 Git 指令</div>
-            <div>使用 Sourcetree 版本控制介面</div>
-            <div>了解 Git Flow 工作流程</div>
-          </div>
+          {lang === "zh_TW" ? (
+            <div className="flex flex-col justify-start items-start pl-4">
+              <div>熟悉 Git 指令</div>
+              <div>使用 Sourcetree 版本控制介面</div>
+              <div>了解 Git Flow 工作流程</div>
+            </div>
+          ) : (
+            <div className="flex flex-col justify-start items-start pl-4">
+              <div>Familiar with Git commands</div>
+              <div>Using Sourcetree for version control</div>
+              <div>Understanding Git Flow workflow</div>
+            </div>
+          )}
         </Col>
       </Row>
     </div>
