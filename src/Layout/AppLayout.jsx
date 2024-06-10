@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Layout } from "antd";
-import AppNavbar from "@/layout/AppNavbar";
-import AppHeader from "@/layout/AppHeader";
-import AppContent from "@/layout/AppContent";
+import AppNavbar from "@/Layout/AppNavbar";
+import AppHeader from "@/Layout/AppHeader";
+import AppContent from "@/Layout/AppContent";
 import { GlobalContext } from "@/contexts/GlobalContext";
 const AppLayout = () => {
   const { deviceType } = useContext(GlobalContext);

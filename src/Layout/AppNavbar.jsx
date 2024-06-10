@@ -4,7 +4,7 @@ import { HomeOutlined, CalendarOutlined } from "@ant-design/icons";
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "@/contexts/GlobalContext";
-import LangSelect from "@/components/LangSelect";
+import LangSelect from "@/Components/LangSelect";
 import { TranslateContext } from "@/contexts/TranslateContext";
 
 const AppNavbar = () => {

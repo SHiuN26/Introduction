@@ -2,7 +2,7 @@ import React, { useContext, forwardRef } from "react";
 import { Row, Col, Divider, Avatar, Typography, Flex } from "antd";
 import picture from "@/asset/img/picture.jpg";
 import WorkTimeLine from "./Components/WorkTimeLine";
-import GithubIcon from "@/components/GithubIcon";
+import GithubIcon from "@/Components/GithubIcon";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import { TranslateContext } from "@/contexts/TranslateContext";
 
