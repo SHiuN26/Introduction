@@ -82,10 +82,13 @@ const Resume = forwardRef((props, ref) => {
           </div>
         </Col>
         <Col span={24} className="flex justify-center items-center">
-          <Flex className="" justify="space-around" gap="small" align="center">
-            {/* <div></div> */}
+          <Flex justify="space-around" gap="small" align="center">
             <GithubIcon />
-            <a className="" href="mailto:justodme26@gmail.com" target="blank">
+            <a
+              className="text-base font-semibold font-Alfa"
+              href="mailto:justodme26@gmail.com"
+              target="blank"
+            >
               justodme26@gmail.com
             </a>
           </Flex>
