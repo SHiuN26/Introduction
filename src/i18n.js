@@ -1,8 +1,8 @@
 // src/i18n.js
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import en from "@/Language/en.json";
-import zh_TW from "@/Language/zh_TW.json";
+import en from "@/language/en.json";
+import zh_TW from "@/language/zh_TW.json";
 
 // 语言资源
 const resources = {
