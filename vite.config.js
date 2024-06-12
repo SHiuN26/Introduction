@@ -22,6 +22,11 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    test: {
+      globals: true,
+      environment: "jsdom",
+      setupFiles: "./setupTests.js",
+    },
     base: env.REACT_APP_ROUTE_PREFIX || "/",
     resolve: {
       alias: {
