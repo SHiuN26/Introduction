@@ -1,36 +1,21 @@
-import React, { useContext, useRef, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Layout, theme, Button, Flex } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { GlobalContext } from "@/contexts/GlobalContext";
-import { PrinterOutlined } from "@ant-design/icons";
-import ReactToPrint, { useReactToPrint } from "react-to-print";
-import Home from "@/pages/ResumePage/Resume";
 import { TranslateContext } from "@/contexts/TranslateContext";
+import PDFButton from "@/components/PDFButton";
 const AppHeader = () => {
   const { Header } = Layout;
+
   const {
     token: { colorPrimary },
   } = theme.useToken();
   const { deviceType, setVisible } = useContext(GlobalContext);
 
-  const [isPrinting, setIsPrinting] = useState(false);
-  const componentRef = useRef();
   const { translate } = useContext(TranslateContext);
 
   const showDrawer = () => {
     setVisible(true);
-  };
-
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
-
-  const handleBeforePrint = () => {
-    setIsPrinting(true);
-  };
-
-  const handleAfterPrint = () => {
-    setIsPrinting(false);
   };
 
   return (
@@ -62,24 +47,7 @@ const AppHeader = () => {
             <MenuOutlined />
           </Button>
         )}
-        <div style={{ display: "none" }}>
-          <Home ref={componentRef} />
-        </div>
-        <ReactToPrint
-          trigger={() => (
-            <Button
-              className="flex justify-center items-center"
-              onClick={() => handlePrint()}
-              disabled={isPrinting}
-            >
-              {deviceType !== "Mobile" && "PDF"}
-              <PrinterOutlined />
-            </Button>
-          )}
-          content={() => componentRef.current}
-          onBeforeGetContent={handleBeforePrint}
-          onAfterPrint={handleAfterPrint}
-        />
+        <PDFButton />
       </Flex>
     </Header>
   );
