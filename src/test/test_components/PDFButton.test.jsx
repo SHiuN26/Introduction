@@ -1,13 +1,15 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import PDFButton from "@/components/PDFButton";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import { TranslateContext } from "@/contexts/TranslateContext";
-import { vi } from "vitest";
+import { expect, vi } from "vitest";
+
+//react-to-print 沒有提供測試接口，所以沒辦法針對useReactToPrint中的方法測試
 
 describe("PDFButton Component", () => {
   const mockGlobalContextValue = {
-    deviceType: "LapTop", // or 'Mobile'
+    deviceType: "Desktop", // or 'Mobile'
   };
 
   const mockTranslateContextValue = {
@@ -25,79 +27,23 @@ describe("PDFButton Component", () => {
     );
   };
 
+  // 檢查列印按鈕是否有顯示 if the PrinterOutlined icon is in the document
   test("renders PDFButton component", () => {
     renderComponent();
-    // 檢查列印圖案是否有顯示 if the PrinterOutlined icon is in the document
     const iconElement = screen.getByRole("img", { class: /anticon-printer/ });
     expect(iconElement).toBeInTheDocument();
   });
 
-  // test("button is initially enabled", () => {
-  //   renderComponent();
-  //   const button = screen.getByRole("button");
-  //   expect(button).toBeEnabled();
-  // });
+  // 確保簡歷內容有在html文件中被隱藏
+  test("renders Resume component within PDFButton", () => {
+    renderComponent();
+    expect(screen.getByText(/Louis Lin/i)).toBeInTheDocument();
+  });
 
-  // test("handlePrint is called when button is clicked", () => {
-  //   const handlePrint = vi.fn();
-  //   vi.mock("react-to-print", () => ({
-  //     ...vi.requireActual("react-to-print"),
-  //     useReactToPrint: () => handlePrint,
-  //   }));
-
-  //   renderComponent();
-  //   const button = screen.getByRole("button");
-  //   fireEvent.click(button);
-  //   expect(handlePrint).toHaveBeenCalled();
-  // });
-
-  // test("button is disabled during printing", async () => {
-  //   const handlePrint = vi.fn();
-  //   vi.mock("react-to-print", () => ({
-  //     ...vi.requireActual("react-to-print"),
-  //     useReactToPrint: () => ({
-  //       content: () => document.createElement("div"),
-  //       onBeforeGetContent: () => {
-  //         return new Promise((resolve) => {
-  //           setTimeout(() => resolve(), 1000);
-  //         });
-  //       },
-  //     }),
-  //   }));
-
-  //   renderComponent();
-  //   const button = screen.getByRole("button");
-  //   fireEvent.click(button);
-  //   expect(button).toBeDisabled();
-  //   // Add additional checks here to ensure button is re-enabled after printing
-  // });
-
-  // test("button is re-enabled after printing", async () => {
-  //   const handlePrint = vi.fn();
-  //   vi.mock("react-to-print", () => ({
-  //     ...vi.requireActual("react-to-print"),
-  //     useReactToPrint: () => ({
-  //       content: () => document.createElement("div"),
-  //       onBeforeGetContent: () => {
-  //         return new Promise((resolve) => {
-  //           setTimeout(() => resolve(), 1000);
-  //         });
-  //       },
-  //     }),
-  //   }));
-
-  //   renderComponent();
-  //   const button = screen.getByRole("button");
-  //   fireEvent.click(button);
-  //   expect(button).toBeDisabled();
-  //   await new Promise((resolve) => setTimeout(resolve, 1000)); // wait for printing to finish
-  //   expect(button).toBeEnabled();
-  // });
-
-  // test("renders correctly on mobile devices", () => {
-  //   mockContextValue.deviceType = "Mobile";
-  //   renderComponent();
-  //   expect(screen.queryByText(/PDF/i)).toBeNull(); // No text on mobile
-  //   expect(screen.getByRole("button")).toBeInTheDocument();
-  // });
+  //確保列印按鈕是可點擊的
+  test("button is initially enabled", () => {
+    renderComponent();
+    const button = screen.getByRole("button");
+    expect(button).toBeEnabled();
+  });
 });

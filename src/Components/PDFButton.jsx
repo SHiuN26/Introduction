@@ -1,6 +1,6 @@
 import React, { useRef, useState, useContext } from "react";
 import { PrinterOutlined } from "@ant-design/icons";
-import ReactToPrint, { useReactToPrint } from "react-to-print";
+import { useReactToPrint } from "react-to-print";
 import { Button } from "antd";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import Resume from "@/pages/ResumePage/Resume";
@@ -12,36 +12,37 @@ const PDFButton = () => {
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
+    onBeforePrint: () => {
+      setIsPrinting(true);
+      console.log("Before print: setting isPrinting to true");
+    },
+    onAfterPrint: () => {
+      setIsPrinting(false);
+      console.log("After print: setting isPrinting to false");
+    },
+    onPrintError: () => {
+      setIsPrinting(false);
+      console.log("Print error: setting isPrinting to false");
+    },
   });
-
-  const handleBeforePrint = () => {
-    setIsPrinting(true);
-  };
-
-  const handleAfterPrint = () => {
-    setIsPrinting(false);
-  };
 
   return (
     <>
       <div style={{ display: "none" }}>
         <Resume ref={componentRef} />
       </div>
-      <ReactToPrint
-        trigger={() => (
-          <Button
-            className="flex justify-center items-center"
-            onClick={() => handlePrint()}
-            disabled={isPrinting}
-          >
-            {deviceType !== "Mobile" && "PDF"}
-            <PrinterOutlined />
-          </Button>
-        )}
-        content={() => componentRef.current}
-        onBeforeGetContent={handleBeforePrint}
-        onAfterPrint={handleAfterPrint}
-      />
+      <Button
+        disabled={isPrinting}
+        className="flex justify-center items-center"
+        onClick={() =>
+          // setIsPrinting(true);
+          handlePrint()
+        }
+        aria-label="print_button"
+      >
+        {deviceType !== "Mobile" && "PDF"}
+        <PrinterOutlined />
+      </Button>
     </>
   );
 };
