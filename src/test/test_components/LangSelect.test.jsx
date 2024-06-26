@@ -26,6 +26,7 @@ describe("LangSelect Component", () => {
     fireEvent.mouseDown(combobox);
 
     const enOption = screen.getByText("English");
+    fireEvent.click(enOption);
     expect(enOption).toBeInTheDocument();
   });
 });
