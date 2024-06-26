@@ -28,5 +28,10 @@ describe("LangSelect Component", () => {
     const enOption = screen.getByText("English");
     fireEvent.click(enOption);
     expect(enOption).toBeInTheDocument();
+
+    fireEvent.mouseDown(combobox);
+    // const zhOption = screen.getByText("繁體中文");
+    fireEvent.click(zhOption);
+    expect(zhOption).toBeInTheDocument();
   });
 });
