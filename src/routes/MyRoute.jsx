@@ -9,7 +9,7 @@ const MyRoute = () => {
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Resume />} />
-        <Route path="todo" element={<Todo />} />
+        <Route path="/todo" element={<Todo />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
