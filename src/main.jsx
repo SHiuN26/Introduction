@@ -15,15 +15,15 @@ const routePrefix = process.env.REACT_APP_ROUTE_PREFIX || "";
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter basename={routePrefix}>
-      <QueryClientProvider client={queryClient}>
-        <GlobalProvider>
-          <TranslateProvider>
-            <App />
-          </TranslateProvider>
-        </GlobalProvider>
-      </QueryClientProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter basename={routePrefix}>
+    <QueryClientProvider client={queryClient}>
+      <GlobalProvider>
+        <TranslateProvider>
+          <App />
+        </TranslateProvider>
+      </GlobalProvider>
+    </QueryClientProvider>
+  </BrowserRouter>
+  // </React.StrictMode>
 );

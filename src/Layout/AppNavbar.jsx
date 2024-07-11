@@ -37,6 +37,15 @@ const AppNavbar = () => {
         </>
       ),
     },
+    {
+      key: "/todo2",
+      icon: <CalendarOutlined />,
+      label: (
+        <>
+          <NavLink to={`/todo2`}>Todo List Redux</NavLink>
+        </>
+      ),
+    },
   ];
 
   // const todo = ["I18N", "MockTesting"];

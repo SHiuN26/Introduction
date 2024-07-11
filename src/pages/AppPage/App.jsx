@@ -22,9 +22,9 @@ const App = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    console.log("deviceType =>", deviceType);
-  }, [deviceType]);
+  // useEffect(() => {
+  //   console.log("deviceType =>", deviceType);
+  // }, [deviceType]);
 
   return (
     <ConfigProvider
