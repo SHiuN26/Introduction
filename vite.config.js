@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
       environment: "jsdom",
       setupFiles: "./setupTests.js",
     },
-    base: env.REACT_APP_ROUTE_PREFIX || "/",
+    base: env.REACT_APP_ROUTE_PREFIX || "/Introduction/",
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src/"),
