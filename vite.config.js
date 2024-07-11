@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => {
     },
     define: {
       "process.env.REACT_APP_ROUTE_PREFIX": JSON.stringify(
-        env.REACT_APP_ROUTE_PREFIX || ""
+        env.REACT_APP_ROUTE_PREFIX || "/Introduction/"
       ),
     },
   };
