@@ -28,21 +28,21 @@ const AppNavbar = () => {
         </>
       ),
     },
+    // {
+    //   key: "/todo",
+    //   icon: <CalendarOutlined />,
+    //   label: (
+    //     <>
+    //       <NavLink to={`/todo`}>Todo List</NavLink>
+    //     </>
+    //   ),
+    // },
     {
       key: "/todo",
       icon: <CalendarOutlined />,
       label: (
         <>
           <NavLink to={`/todo`}>Todo List</NavLink>
-        </>
-      ),
-    },
-    {
-      key: "/todo2",
-      icon: <CalendarOutlined />,
-      label: (
-        <>
-          <NavLink to={`/todo2`}>Todo List Redux</NavLink>
         </>
       ),
     },
